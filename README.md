@@ -63,7 +63,7 @@ FrQuery is a simple authentication form using **JWT** and **MongoDB**. Users can
   {
     "message": "Login successful",
     "email" : "your_email",
-    "createdAt : "your_signup_date",
+    "createdAt" : "your_signup_date",
     "id" : "mongodb_id"
   }
   ```
