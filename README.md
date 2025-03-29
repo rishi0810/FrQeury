@@ -72,7 +72,7 @@ FrQuery is a simple authentication form using **JWT** and **MongoDB**. Users can
 
 - **Endpoint**: `GET /logout`
 
-  ```
+  
 
 ## Folder Structure
 
