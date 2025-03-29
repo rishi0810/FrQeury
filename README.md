@@ -17,7 +17,7 @@ FrQuery is a simple authentication form using **JWT** and **MongoDB**. Users can
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/FrQuery.git
+   git clone https://github.com/rishi0810/FrQeury.git
    cd FrQuery
    ```
 2. Install dependencies:
