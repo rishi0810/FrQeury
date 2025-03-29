@@ -1,12 +1,96 @@
-# React + Vite
+# FrQuery - JWT Authentication Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FrQuery is a simple authentication form using **JWT** and **MongoDB**. Users can **sign up, log in, and log out**, with their information securely stored in a database. The app supports environment variables for **JWT\_SECRET, PORT, and MongoDB URL** to allow customization.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Secure login and signup with JWT.
+- **MongoDB Storage**: Stores user email, password (hashed), and timestamps.
+- **Token-Based Access**: JWT is used for session management.
+- **REST API Routes**:
+  - `/signup` → Register a new user.
+  - `/login` → Authenticate a user.
+  - `/logout` → Remove session token.
+- **Environment Configurable**: Users can set custom values in `.env`.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/FrQuery.git
+   cd FrQuery
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create a `.env` file and configure:
+   ```env
+   JWT_SECRET=your_secret_key
+   PORT= random_port
+   mongourl=your_mongodb_url
+   ```
+4. Start the server:
+   ```sh
+   npm start
+   ```
+
+## API Endpoints
+
+### 1. User Signup
+
+- **Endpoint**: `POST /signup`
+- **Request Body**:
+  ```json
+  {
+    "email": "user@example.com",
+    "password": "yourpassword"
+  }
+  ```
+
+### 2. User Login
+
+- **Endpoint**: `POST /login`
+- **Request Body**:
+  ```json
+  {
+    "email": "user@example.com",
+    "password": "yourpassword"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "message": "Login successful",
+    "email" : "your_email",
+    "createdAt : "your_signup_date",
+    "id" : "mongodb_id"
+  }
+  ```
+
+### 3. User Logout
+
+- **Endpoint**: `GET /logout`
+
+  ```
+
+## Folder Structure
+
+```
+FrQuery/
+├── controllers/      # Handles signup, login, logout logic
+├── db/               # Connection for MongoDB
+├── models/           # User schema for MongoDB
+├── routes/           # API route handlers
+├── util/             # PW Hashing Function & JWT token handlers 
+├── index.js          # Main Entry Point
+├── .env              # Configuration file
+└── package.json      # Dependencies and scripts
+```
+
+## Contributing
+
+Feel free to fork the repository and submit pull requests.
+
+##
+
